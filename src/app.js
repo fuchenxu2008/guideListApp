@@ -14,7 +14,8 @@ class App extends Component {
   config = {
     pages: [
       'pages/index/index',
-      'pages/bookmark/bookmark'
+      'pages/bookmark/bookmark',
+      'pages/listdetail/listdetail'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -23,12 +24,17 @@ class App extends Component {
       navigationBarTextStyle: 'black'
     },
     tabBar: {
+      selectedColor: '#FACB61',
       list: [{
         pagePath: "pages/index/index",
-        text: "HomePage"
+        text: "Explore",
+        iconPath: 'assets/icons/icon-check-list.png',
+        selectedIconPath: 'assets/icons/icon-check-list-selected.png',
       },{
         pagePath: "pages/bookmark/bookmark",
-        text: "Bookmark"
+        text: "Bookmark",
+        iconPath: 'assets/icons/bookmark.png',
+        selectedIconPath: 'assets/icons/bookmark-selected.png',
       }]
     },
   }

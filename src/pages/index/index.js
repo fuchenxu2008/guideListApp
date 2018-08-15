@@ -1,5 +1,10 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
+import SearchBar from '../../components/SearchBar/SearchBar';
+import CheckList from '../../components/CheckList/CheckList';
+import Carousel from '../../components/Carousel/Carousel';
+import database from '../../database';
+
 // import { connect } from '@tarojs/redux'
 
 import './index.css'
@@ -9,7 +14,7 @@ import './index.css'
 // }))
 class Index extends Component {
   config = {
-    navigationBarTitleText: '首页'
+    navigationBarTitleText: 'Explore'
   }
 
   componentWillReceiveProps (nextProps) {
@@ -25,7 +30,11 @@ class Index extends Component {
   render () {
     return (
       <View className='index'>
-        index
+        <SearchBar />
+        <View className='main-heading'>Featured</View>
+        <Carousel />
+        <View className='main-heading'>Explore More</View>
+        <CheckList lists={database} />
       </View>
     )
   }

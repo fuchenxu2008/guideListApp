@@ -1,0 +1,11 @@
+.carousel {
+    margin: 35px;
+}
+
+.carousel-item {
+    border-radius: 15px;
+}
+
+.swiper-img {
+    width: 100%;
+}
