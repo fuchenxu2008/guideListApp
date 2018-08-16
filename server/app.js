@@ -5,12 +5,15 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const setRouter = require('./routes');
 
 const app = express();
 app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+setRouter(app);
+global.__root = __dirname;
 
 const port = process.env.PORT || 9099;
 const customHost = process.env.HOST;

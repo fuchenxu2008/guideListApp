@@ -9,16 +9,6 @@ import './CheckList.css'
 // }), (dispatch) => ({
 // }))
 class CheckList extends Component {
-  componentWillReceiveProps (nextProps) {
-    console.log(this.props, nextProps)
-  }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
   render () {
     return (
       <View className='checklist'>

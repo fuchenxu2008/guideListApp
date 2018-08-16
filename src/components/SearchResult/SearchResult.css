@@ -1,0 +1,35 @@
+.searchresult {
+    position: fixed;
+    z-index: 10;
+    top: 85px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.747);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    overflow: scroll;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.main-heading {
+    color: rgb(83, 83, 83);
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.searchresult-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px 35px 20px 35px;
+}

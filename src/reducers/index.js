@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import counter from './counter'
+import checklistReducer from './checklist'
 
 export default combineReducers({
-  counter
+  checklistReducer,
 })

@@ -1,7 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Image } from '@tarojs/components'
 // import { connect } from '@tarojs/redux'
-import image from '../../assets/img/cal.png';
 
 import './CheckListItem.css'
 
@@ -9,28 +8,18 @@ import './CheckListItem.css'
 // }), (dispatch) => ({
 // }))
 class CheckListItem extends Component {
-  componentWillReceiveProps (nextProps) {
-    console.log(this.props, nextProps)
-  }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
-  enterCheckListItem() {
+  enterCheckListItem(id) {
       Taro.navigateTo({
-          url: '/pages/listdetail/listdetail'
+          url: `/pages/listdetail/listdetail?id=${id}`
       })
   }
 
   render () {
     const { list } = this.props; 
     return (
-      <View className='checklistitem' onClick={this.enterCheckListItem.bind(this)}>
+      <View className='checklistitem' onClick={this.enterCheckListItem.bind(this, list.id)}>
         <View className='checklistitem-heading'>
-            <Image src={image} alt='' className='checklistitem-image' mode='aspectFit' />
+            <Image src={list.image} alt='' className='checklistitem-image' mode='aspectFill' />
         </View>
         <View className='checklistitem-title'>
             {list.title}

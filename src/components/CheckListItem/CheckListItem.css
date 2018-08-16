@@ -1,9 +1,22 @@
 .checklistitem {
     border-radius: 15px;
     margin: 35px 35px 35px 35px;
-    padding: 10px 20px 10px 20px;
     background-color: white;
     box-shadow: 0 5px 30px rgba(221, 221, 221, 0.6);
+    overflow: hidden;
+    animation: slideUp 0.8s ease;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(30%);
+  }
+  60% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 .checklistitem-heading {
@@ -15,6 +28,7 @@
 
 .checklistitem-image {
     max-height: 300px;
+    width: 100%;
 }
 
 .checklistitem-title {
@@ -22,9 +36,9 @@
     white-space: normal;
     color: rgb(77, 77, 77);
     font-weight: bold;
-    margin: 0 0 20px 0;
-    padding: 0 20px 0 20px;
-    /* text-align: center; */
+    margin: 20px 20px 20px 20px;
+    padding: 0 0 0 20px;
+    font-size: 0.9rem;
     color: rgb(236, 179, 45);
-    border-left: 5px solid #FACB61;
+    border-left: 6px solid #FACB61;
 }

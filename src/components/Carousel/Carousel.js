@@ -9,16 +9,6 @@ import './Carousel.css'
 // }), (dispatch) => ({
 // }))
 class Carousel extends Component {
-  componentWillReceiveProps (nextProps) {
-    console.log(this.props, nextProps)
-  }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
   onClickSwiperItem() {
     Taro.navigateTo({
       url: '/pages/listdetail/listdetail'

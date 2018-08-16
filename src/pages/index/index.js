@@ -1,40 +1,40 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
+import { connect } from '@tarojs/redux';
 import SearchBar from '../../components/SearchBar/SearchBar';
+import SearchResult from '../../components/SearchResult/SearchResult';
 import CheckList from '../../components/CheckList/CheckList';
 import Carousel from '../../components/Carousel/Carousel';
-import database from '../../database';
-
-// import { connect } from '@tarojs/redux'
+import { getAllChecklists } from '../../actions/checklist';
 
 import './index.css'
 
-// @connect(({  }) => ({
-// }), (dispatch) => ({
-// }))
+@connect(({ checklistReducer }) => ({
+  checklists: checklistReducer.checklists,
+  searching: checklistReducer.searching,
+}),
+  (dispatch) => ({
+    getAllChecklists: () => dispatch(getAllChecklists()),
+  }
+))
 class Index extends Component {
   config = {
     navigationBarTitleText: 'Explore'
   }
 
-  componentWillReceiveProps (nextProps) {
-    console.log(this.props, nextProps)
+  componentWillMount() {
+    this.props.getAllChecklists();
   }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
 
   render () {
     return (
-      <View className='index'>
+      <View className='index' style={this.props.searching ? 'position: fixed;' : ''}>
         <SearchBar />
+        { this.props.searching && <SearchResult /> }
         <View className='main-heading'>Featured</View>
         <Carousel />
         <View className='main-heading'>Explore More</View>
-        <CheckList lists={database} />
+        <CheckList lists={this.props.checklists} />
       </View>
     )
   }
