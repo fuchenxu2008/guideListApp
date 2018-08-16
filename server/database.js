@@ -30,7 +30,7 @@ module.exports = [{
   id: '2',
   title: 'Checking Your Residence Permit Expiry Date (International Students)',
   note: 'It takes 2 to 4 weeks to renew your residence permit, and you can start the application for a new residence permit from 1 month before the expiry date. The latest you should start applying is 2 weeks before the expiry date. You will need to leave your passport at the registration office, and you can ask for a document to temporarily replace your passport. (Travelling within China also needs a passport).',
-  image: 'http://mpic.tiankong.com/694/c3e/694c3eecc57881d43f4827dbb4414bf4/640.jpg@!670w',
+  image: 'https://www.barclayscorporate.com/content/corppublic/en/insight-and-research/industry-expertise/social-housing-trends/_jcr_content/bc-content-center-par-1/textimageeditor/image.corppublic.full.high.jpg',
   steps: [
     'Take your passport and look at your residence permit’s expiry date:',
     `You will need to prepare:
@@ -54,7 +54,7 @@ module.exports = [{
 }, {
   id: '3',
   title: 'Checking Your 大陆签注 Expiry Date (Taiwan Students)',
-  image: 'http://mpic.tiankong.com/694/c3e/694c3eecc57881d43f4827dbb4414bf4/640.jpg@!670w',
+  image: 'https://static.ogstatic.com/images/articles/2018/01/26214049/Passports_630x320.jpg',
   steps: [
     `You will need to prepare:
     Registration form of temporary residence issued by the local police station
@@ -72,7 +72,7 @@ module.exports = [{
 }, {
   id: '4',
   title: 'Paying Your Apartment Rent And Fees',
-  image: 'http://mpic.tiankong.com/694/c3e/694c3eecc57881d43f4827dbb4414bf4/640.jpg@!670w',
+  image: 'http://classamgmt.com/wp-content/uploads/2014/07/Property_Management_Rent_Payment.png',
   note: 'Don’t forget to take into account possible electricity and water fees.',
   steps: [
     'Go to your apartment’s front desk and ask how much you owe them. Ask for detailed calculations: how much is the rent, how much is the electricity and water fees.',
@@ -83,7 +83,7 @@ module.exports = [{
 }, {
   id: '5',
   title: 'Getting Your Phone Number & Wi-Fi (From China Unicom)',
-  image: 'http://mpic.tiankong.com/694/c3e/694c3eecc57881d43f4827dbb4414bf4/640.jpg@!670w',
+  image: 'https://us-east-1.tchyn.io/snopes-production/uploads/2017/09/no_cellular_signal_fb.jpg?resize=865%2C452',
   steps: [
     `You will need:
     Your passport WITH the student visa
@@ -112,7 +112,7 @@ module.exports = [{
 }, {
   id: '6',
   title: 'Opening A Chinese Bank Account',
-  image: 'http://mpic.tiankong.com/694/c3e/694c3eecc57881d43f4827dbb4414bf4/640.jpg@!670w',
+  image: 'https://1bitcoinhoje.com/wp-content/uploads/2018/01/bitcoin-cartao-credito-640x407.jpg',
   steps: [
     `Considering the conveniences and requirements, you are recommended to go to CITIC: 中国中信银行`,
     `Take a taxi to:
@@ -123,7 +123,7 @@ module.exports = [{
 }, {
   id: '7',
   title: 'Opening A Chinese Bank Account: For Students From Iran, Russia, Syria, Sudan, and Ukraine',
-  image: 'http://mpic.tiankong.com/694/c3e/694c3eecc57881d43f4827dbb4414bf4/640.jpg@!670w',
+  image: 'https://www.justaskpoland.com/wp-content/uploads/2017/04/The-best-banks-in-Poland.jpeg',
   note: 'This is mandatory and needs to be done within 24 hours of your arrival. But if you arrive on a Sunday, the police station is closed so you can take a day off and come on Monday.',
   steps: [
     `You will need:
@@ -138,7 +138,7 @@ module.exports = [{
 }, {
   id: '8',
   title: 'Applying For Residence Permit (International Students)',
-  image: 'http://mpic.tiankong.com/694/c3e/694c3eecc57881d43f4827dbb4414bf4/640.jpg@!670w',
+  image: 'https://www.sdu.dk/-/media/images/information_til/international_staff/topbilleder/workandresidencepermitcolourbox3611792.jpg?h=330&la=en&w=770&hash=DA5F7D081C88B1338B26AC4B799BF14D5AF06531',
   steps: [
     `You will need to prepare:
     Registration form of temporary residence issued by the local police station

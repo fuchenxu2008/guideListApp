@@ -1,6 +1,6 @@
 import Taro from '@tarojs/taro';
 
-const ROOT_URL = 'http://127.0.0.1:9099';
+const ROOT_URL = 'https://guide.kyrie.top';
 
 export const getAllChecklists = () => {
     return Taro.request({

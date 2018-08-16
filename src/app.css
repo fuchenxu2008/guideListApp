@@ -8,9 +8,9 @@ page {
     -webkit-font-smoothing: subpixel-antialiase;
     width: 100vw;
     height: 100vh;
-    /* overflow: hidden; */
     position: relative;
     color: rgb(80, 80, 80);
+    /* overflow-x: hidden; */
 }
 
 page::before {

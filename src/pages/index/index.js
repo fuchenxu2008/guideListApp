@@ -28,9 +28,9 @@ class Index extends Component {
 
   render () {
     return (
-      <View className='index' style={this.props.searching ? 'position: fixed;' : ''}>
+      <View className='index' style={{ position: `${this.props.searching ? 'fixed' : 'static'}` }}>
         <SearchBar />
-        { this.props.searching && <SearchResult /> }
+        <SearchResult show={this.props.searching} />
         <View className='main-heading'>Featured</View>
         <Carousel />
         <View className='main-heading'>Explore More</View>

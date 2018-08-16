@@ -11,11 +11,9 @@ import './SearchBar.css'
 }))
 class SearchBar extends Component {
   onSearch(e) {
-    this.props.searchChecklist(e.detail.value);
-  }
-
-  onCheckEmpty(e) {
-    if (e.detail.value === '') this.props.clearSearchResult();
+    const phrase = e.detail.value || e.target.value;
+    if (phrase === '') this.props.clearSearchResult();
+    else this.props.searchChecklist(phrase);
   }
 
   render () {
@@ -25,7 +23,7 @@ class SearchBar extends Component {
             <Input
               className='searchbar-input'
               placeholder='Search for a topic here...'
-              onInput={this.onCheckEmpty.bind(this)}
+              onInput={this.onSearch.bind(this)}
               onConfirm={this.onSearch.bind(this)}
             />
             <Icon size='15' type='search' className='searchbar-icon' /> 
