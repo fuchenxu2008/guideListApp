@@ -28,25 +28,23 @@
     margin: 20px 0 20px 0;
 }
 
-.main-heading {
-    color: rgb(83, 83, 83);
-    font-weight: bold;
-    font-size: 1.3rem;
-    margin: 20px 0 20px 0;
-}
-
-.listdetail-step {
-    display: flex;
-    margin-bottom: 25px;
-}
-
 checkbox .wx-checkbox-input {
-    align-self: flex-start;
-    min-width: 47px;
+  align-self: flex-start;
+  min-width: 47px;
 }
 
 .listdetail-addbookmark {
     background-color: rgb(247, 188, 50);
     color: white;
     font-weight: bold;
+}
+
+.listdetail-removebookmark {
+  background-color: rgb(197, 30, 30);
+  color: white;
+  font-weight: bold;
+}
+
+.loading {
+    margin: 35px;
 }

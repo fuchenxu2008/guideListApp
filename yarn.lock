@@ -96,18 +96,18 @@
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
-"@tarojs/async-await@^1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@tarojs/async-await/-/async-await-1.0.0-beta.9.tgz#7671ed9e3902e2f72aa9b1595fc0d6f7a3180ce6"
+"@tarojs/async-await@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/@tarojs/async-await/-/async-await-1.0.0-beta.11.tgz#ead178aee12c6fe163bd974fa91ebf228bdfac48"
   dependencies:
     promise-polyfill "^7.1.2"
     regenerator-runtime "^0.11.1"
 
-"@tarojs/cli@^1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@tarojs/cli/-/cli-1.0.0-beta.9.tgz#69ad78b35b03b0d2646c38fec73f654d3939ffc1"
+"@tarojs/cli@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/@tarojs/cli/-/cli-1.0.0-beta.11.tgz#300616d010a2ac8cbb6aa54a55296f3875e3452a"
   dependencies:
-    "@tarojs/transformer-wx" "1.0.0-beta.9"
+    "@tarojs/transformer-wx" "1.0.0-beta.11"
     autoprefixer "^8.4.1"
     babel-core "^6.26.3"
     babel-generator "^6.26.1"
@@ -132,7 +132,7 @@
     minimatch "^3.0.4"
     ora "^2.0.0"
     postcss "^6.0.22"
-    postcss-pxtransform "1.0.0-beta.9"
+    postcss-pxtransform "1.0.0-beta.11"
     postcss-url "^7.3.2"
     resolve "^1.6.0"
     semver "^5.5.0"
@@ -141,9 +141,9 @@
     vinyl "^2.1.0"
     vinyl-fs "^3.0.2"
 
-"@tarojs/components@^1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@tarojs/components/-/components-1.0.0-beta.9.tgz#0402a6232e29e88ae530f660a3d6ef449af02c36"
+"@tarojs/components@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/@tarojs/components/-/components-1.0.0-beta.11.tgz#82b63cc5607e1448b2aff57ebf4e7abadd841dda"
   dependencies:
     classnames "^2.2.5"
     nervjs "^1.3.0"
@@ -151,69 +151,69 @@
     react "16.3.0"
     weui "^1.1.2"
 
-"@tarojs/plugin-babel@^1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@tarojs/plugin-babel/-/plugin-babel-1.0.0-beta.9.tgz#04bd75ca54812bae42ba4a56509e6644c23f6e36"
+"@tarojs/plugin-babel@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/@tarojs/plugin-babel/-/plugin-babel-1.0.0-beta.11.tgz#9a5d32d2d91e6a270b5fd4ee8cf534cd5d72aec8"
   dependencies:
     babel-core "^6.26.0"
 
-"@tarojs/plugin-csso@^1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@tarojs/plugin-csso/-/plugin-csso-1.0.0-beta.9.tgz#35cb8395a70b77d021e2b90843dd84560f63d39b"
+"@tarojs/plugin-csso@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/@tarojs/plugin-csso/-/plugin-csso-1.0.0-beta.11.tgz#eef54c31d05c1318c7c32a361b45fb49566871f6"
   dependencies:
     csso "^3.5.0"
 
-"@tarojs/plugin-uglifyjs@^1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@tarojs/plugin-uglifyjs/-/plugin-uglifyjs-1.0.0-beta.9.tgz#ed72cf414b4721213f847cfd415382893cbe2639"
+"@tarojs/plugin-uglifyjs@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/@tarojs/plugin-uglifyjs/-/plugin-uglifyjs-1.0.0-beta.11.tgz#359e08c3a2d8bf5183db25e47c4688b5f5e71819"
   dependencies:
     uglify-js "^3.3.24"
 
-"@tarojs/redux-h5@^1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@tarojs/redux-h5/-/redux-h5-1.0.0-beta.9.tgz#61368380633fb46e99e2d33c40394d8b294d87bb"
+"@tarojs/redux-h5@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/@tarojs/redux-h5/-/redux-h5-1.0.0-beta.11.tgz#d3a8632406b48beafb06f759882730d3a060b74e"
   dependencies:
-    "@tarojs/taro-h5" "1.0.0-beta.9"
+    "@tarojs/taro-h5" "1.0.0-beta.11"
     hoist-non-react-statics "^2.5.0"
     invariant "^2.2.4"
     loose-envify "^1.1.0"
     prop-types "^15.6.1"
     redux "^4.0.0"
 
-"@tarojs/redux@^1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@tarojs/redux/-/redux-1.0.0-beta.9.tgz#ce21922b37b47deed050f55e37b00a440225b64d"
+"@tarojs/redux@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/@tarojs/redux/-/redux-1.0.0-beta.11.tgz#dab5d447587e4bfc862a9335d5ddc177a0d649ea"
 
-"@tarojs/router@^1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@tarojs/router/-/router-1.0.0-beta.9.tgz#f6619a82d2e2c682fb25e5fa92e202887105ae6c"
+"@tarojs/router@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/@tarojs/router/-/router-1.0.0-beta.11.tgz#d6d0e3005a68823a75482d54ec0607db442e9045"
   dependencies:
-    "@tarojs/taro-h5" "1.0.0-beta.9"
+    "@tarojs/taro-h5" "1.0.0-beta.11"
 
-"@tarojs/taro-h5@1.0.0-beta.9", "@tarojs/taro-h5@^1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@tarojs/taro-h5/-/taro-h5-1.0.0-beta.9.tgz#d8d47a3497d424745a8ff21cf0fa14ce8f6fc3ab"
+"@tarojs/taro-h5@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/@tarojs/taro-h5/-/taro-h5-1.0.0-beta.11.tgz#18e0a83ff19d5511b13f24a45d229c51c1c1318a"
   dependencies:
-    "@tarojs/taro" "1.0.0-beta.9"
+    "@tarojs/taro" "1.0.0-beta.11"
     jsonp-retry "^1.0.3"
     mobile-detect "^1.4.2"
     whatwg-fetch "^2.0.4"
 
-"@tarojs/taro-weapp@^1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@tarojs/taro-weapp/-/taro-weapp-1.0.0-beta.9.tgz#782ebd2e117be9b51ab5cf2ef446f9ae682cd28d"
+"@tarojs/taro-weapp@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/@tarojs/taro-weapp/-/taro-weapp-1.0.0-beta.11.tgz#3eff92329fcd5fb296978a47e1bf969a392877e3"
   dependencies:
-    "@tarojs/taro" "1.0.0-beta.9"
+    "@tarojs/taro" "1.0.0-beta.11"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro@1.0.0-beta.9", "@tarojs/taro@^1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@tarojs/taro/-/taro-1.0.0-beta.9.tgz#bd8464ec143d1618d79a0162276c81ec0e45ff0b"
+"@tarojs/taro@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/@tarojs/taro/-/taro-1.0.0-beta.11.tgz#d25467f53a8dc8a7d79adfbcfbdd2162cecf34b9"
 
-"@tarojs/transformer-wx@1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@tarojs/transformer-wx/-/transformer-wx-1.0.0-beta.9.tgz#c451d4e6cded897f353e63edd0f794501c68b763"
+"@tarojs/transformer-wx@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/@tarojs/transformer-wx/-/transformer-wx-1.0.0-beta.11.tgz#9c6436a8e263062f1722514b43fcd77668e90c27"
   dependencies:
     "@babel/code-frame" "^7.0.0-beta.44"
     babel-core "^6.26.3"
@@ -226,9 +226,9 @@
     lodash "^4.17.5"
     typescript "^3.0.1"
 
-"@tarojs/webpack-runner@^1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@tarojs/webpack-runner/-/webpack-runner-1.0.0-beta.9.tgz#0534b46ca3648949843861094e6dd01c7cf9e238"
+"@tarojs/webpack-runner@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/@tarojs/webpack-runner/-/webpack-runner-1.0.0-beta.11.tgz#0e95f4719cf5e0fc7bef1fb407342c976b4cf7bc"
   dependencies:
     autoprefixer "^8.6.4"
     babel-core "^6.26.0"
@@ -251,13 +251,12 @@
     ora "^2.1.0"
     postcss-csso "^3.0.0"
     postcss-loader "^2.1.3"
-    postcss-plugin-constparse "1.0.0-beta.9"
-    postcss-pxtransform "1.0.0-beta.9"
+    postcss-plugin-constparse "1.0.0-beta.11"
+    postcss-pxtransform "1.0.0-beta.11"
     sass-loader "^7.0.3"
     style-loader "^0.21.0"
     stylus "^0.54.5"
     stylus-loader "^3.0.2"
-    ts-loader "^4.4.2"
     uglifyjs-webpack-plugin "^1.2.4"
     url-loader "^1.0.1"
     webpack "^4.14.0"
@@ -1544,7 +1543,7 @@ chalk@^1.1.1, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.3.1, chalk@^2.3.2, chalk@^2.4.1:
+chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.1, chalk@^2.3.2, chalk@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.1.tgz#18c49ab16a037b6eb0152cc83e3471338215b66e"
   dependencies:
@@ -2347,7 +2346,7 @@ end-of-stream@^1.0.0, end-of-stream@^1.1.0:
   dependencies:
     once "^1.4.0"
 
-enhanced-resolve@^4.0.0, enhanced-resolve@^4.1.0:
+enhanced-resolve@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-4.1.0.tgz#41c7e0bfdfe74ac1ffe1e57ad6a5c6c9f3742a7f"
   dependencies:
@@ -2420,11 +2419,11 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
-eslint-config-taro@^1.0.0-beta.9:
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/eslint-config-taro/-/eslint-config-taro-1.0.0-beta.9.tgz#f16de16e870d3b911c924931715443be89b27300"
+eslint-config-taro@1.0.0-beta.11:
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/eslint-config-taro/-/eslint-config-taro-1.0.0-beta.11.tgz#5378792129377230f8401329d164c7e1d3258911"
   dependencies:
-    eslint-plugin-taro "1.0.0-beta.9"
+    eslint-plugin-taro "1.0.0-beta.11"
 
 eslint-import-resolver-node@^0.3.1:
   version "0.3.2"
@@ -2464,9 +2463,9 @@ eslint-plugin-react@^7.8.2:
     jsx-ast-utils "^2.0.1"
     prop-types "^15.6.2"
 
-eslint-plugin-taro@1.0.0-beta.9, eslint-plugin-taro@^1.0.0-beta.9:
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-taro/-/eslint-plugin-taro-1.0.0-beta.9.tgz#a828aa43bdb5848cf5123d342871d3d28964589e"
+eslint-plugin-taro@1.0.0-beta.11:
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-taro/-/eslint-plugin-taro-1.0.0-beta.11.tgz#cfa5e0db5fd488bbd1c9ba2a6537b012c38c49ed"
   dependencies:
     has "^1.0.1"
 
@@ -5050,9 +5049,9 @@ postcss-modules-values@^1.3.0:
     icss-replace-symbols "^1.1.0"
     postcss "^6.0.1"
 
-postcss-plugin-constparse@1.0.0-beta.9:
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/postcss-plugin-constparse/-/postcss-plugin-constparse-1.0.0-beta.9.tgz#15f107226211cedfb254597423ac82625c28920b"
+postcss-plugin-constparse@1.0.0-beta.11:
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/postcss-plugin-constparse/-/postcss-plugin-constparse-1.0.0-beta.11.tgz#0da4ecd300befd477f76e8319d789a48c04c6d86"
   dependencies:
     postcss "^6.0.22"
 
@@ -5063,9 +5062,9 @@ postcss-pxtorem@^4.0.1:
     object-assign "^4.1.0"
     postcss "^5.2.10"
 
-postcss-pxtransform@1.0.0-beta.9:
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/postcss-pxtransform/-/postcss-pxtransform-1.0.0-beta.9.tgz#cbe2eab5ee41710a147f759fdd88b3048606faba"
+postcss-pxtransform@1.0.0-beta.11:
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/postcss-pxtransform/-/postcss-pxtransform-1.0.0-beta.11.tgz#136b34a8d27fe4675222ddfd15d033404534da71"
   dependencies:
     postcss "^6.0.16"
     postcss-pxtorem "^4.0.1"
@@ -5694,7 +5693,7 @@ selfsigned@^1.9.1:
   dependencies:
     node-forge "0.7.5"
 
-"semver@2 || 3 || 4 || 5", semver@^5.0.1, semver@^5.3.0, semver@^5.5.0:
+"semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
@@ -6319,16 +6318,6 @@ trim-right@^1.0.1:
   resolved "https://registry.yarnpkg.com/true-case-path/-/true-case-path-1.0.2.tgz#7ec91130924766c7f573be3020c34f8fdfd00d62"
   dependencies:
     glob "^6.0.4"
-
-ts-loader@^4.4.2:
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-4.4.2.tgz#778d4464b24436873c78f7f9e914d88194c2a248"
-  dependencies:
-    chalk "^2.3.0"
-    enhanced-resolve "^4.0.0"
-    loader-utils "^1.0.2"
-    micromatch "^3.1.4"
-    semver "^5.0.1"
 
 tslib@^1.9.0:
   version "1.9.3"

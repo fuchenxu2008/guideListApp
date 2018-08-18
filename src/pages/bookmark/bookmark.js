@@ -1,31 +1,40 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
-// import { connect } from '@tarojs/redux'
+import { connect } from '@tarojs/redux'
+import CheckList from '../../components/CheckList/CheckList';
 
 import './bookmark.css'
 
-// @connect(({  }) => ({
-// }), (dispatch) => ({
-// }))
+@connect(({ usageReducer, checklistReducer }) => ({
+  bookmarked: usageReducer.bookmarked,
+  checklists: checklistReducer.checklists,
+}))
 class Bookmark extends Component {
   config = {
     navigationBarTitleText: 'Bookmark'
   }
 
-  componentWillReceiveProps (nextProps) {
-    console.log(this.props, nextProps)
+  onShareAppMessage() {
+    return {
+      title: 'Your Bookmarks',
+      desc: 'Keep track of your progress.',
+      path: '/pages/bookmark/bookmark'
+    }
   }
 
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
   render () {
+    const { bookmarked, checklists } = this.props;
+    const bookmarkedChecklists = checklists.filter(list => Object.keys(bookmarked).includes(list.id.toString()));
     return (
       <View className='bookmark'>
-        bookmark
+        <View className='main-heading'>Your Bookmarks</View>
+        {
+          bookmarkedChecklists.length > 0
+            ? <CheckList lists={bookmarkedChecklists} />
+            : <View className='no-bookmark'>
+                ～ No Bookmark ～
+              </View>
+        }
       </View>
     )
   }

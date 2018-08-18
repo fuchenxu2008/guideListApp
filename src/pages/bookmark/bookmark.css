@@ -1,0 +1,19 @@
+.bookmark {
+  padding: 20px 0 10px 0;
+}
+
+.main-heading {
+  color: rgb(83, 83, 83);
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin: 10px 35px 10px 35px;
+}
+
+.no-bookmark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: grey;
+}

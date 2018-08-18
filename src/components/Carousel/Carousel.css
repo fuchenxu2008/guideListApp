@@ -4,8 +4,21 @@
 
 .carousel-item {
     border-radius: 15px;
+    position: relative;
 }
 
 .swiper-img {
     width: 100%;
+}
+
+.carousel-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: rgb(240, 240, 240);
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-image: linear-gradient(to bottom, #868f9600 0%, #484a4b 100%);
+    padding: 10px 20px 10px 20px;
 }

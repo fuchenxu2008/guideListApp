@@ -1,28 +1,23 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Swiper, SwiperItem, Image } from '@tarojs/components'
-// import { connect } from '@tarojs/redux'
-import image from '../../assets/img/passport.jpeg';
 
 import './Carousel.css'
 
-// @connect(({  }) => ({
-// }), (dispatch) => ({
-// }))
 class Carousel extends Component {
-  onClickSwiperItem() {
+  enterCheckListItem(id) {
     Taro.navigateTo({
-      url: '/pages/listdetail/listdetail'
+      url: `/pages/listdetail/listdetail?id=${id}`
     })
   }
 
   render () {
-    const swiper = (
-      <SwiperItem className='carousel-item'>
-          <View onClick={this.onClickSwiperItem.bind(this)}>
-            <Image src={image} alt='' className='swiper-img' mode='aspectFill' />
-          </View>
-        </SwiperItem>
-    );
+    const picked = [];
+    const availableList = this.props.contents || [];
+    while (picked.length < 3) {
+      const pickedIndex = Math.floor(Math.random() * availableList.length)
+      picked.push(availableList[pickedIndex]);
+      availableList.splice(pickedIndex, 1);
+    }
 
     return (
       <Swiper
@@ -33,8 +28,16 @@ class Carousel extends Component {
         duration='500'
         className='carousel'
       >
-        {swiper}
-        {swiper}
+        {
+          picked.map(list => (
+            <SwiperItem key={list.id} className='carousel-item'>
+              <View onClick={this.enterCheckListItem.bind(this, list.id)}>
+                <Image src={list.image} alt='' className='swiper-img' mode='aspectFill' />
+                <View className='carousel-title'>{list.title}</View>
+              </View>
+            </SwiperItem>
+          ))
+        }
       </Swiper>
     )
   }

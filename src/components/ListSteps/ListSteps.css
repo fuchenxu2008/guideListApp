@@ -1,0 +1,13 @@
+.main-heading {
+  color: rgb(83, 83, 83);
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin: 20px 0 20px 0;
+}
+
+.listdetail-step {
+  display: flex;
+  margin-bottom: 25px;
+  color: rgb(105, 105, 105);
+  text-shadow: 5px 5px 20px rgba(168, 168, 168, 0.411);
+}

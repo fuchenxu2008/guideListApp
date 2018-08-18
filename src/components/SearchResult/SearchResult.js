@@ -12,7 +12,7 @@ import './SearchResult.css'
   clearSearchResult: () => dispatch(clearSearchResult())
 }))
 class SearchBar extends Component {
-  state = { aniClass: 'hidden' };
+  // state = { aniClass: 'hidden' };
 
   componentWillReceiveProps(nextProps) {
     if (!nextProps.show && this.state.aniClass === 'searchresult-show')
@@ -27,7 +27,7 @@ class SearchBar extends Component {
   render () {
     return (
       <ScrollView
-        className={`searchresult ${this.state.aniClass}`}
+        className='searchresult'
         scrollY
       >
         <View className='searchresult-heading'>

@@ -17,7 +17,7 @@ class CheckList extends Component {
         ))}
       </View>
     ) : (
-      <View>Loading...</View>
+      <View className='loading'>Loading...</View>
     )
     return (
       <View>{jsx}</View>

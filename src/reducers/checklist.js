@@ -7,7 +7,7 @@ const initialState = {
     searching: false,
 }
 
-export default function checklist(state = initialState, action) {
+export default function checklistReducer(state = initialState, action) {
     switch (action.type) {
         case GET_ALL_CHECKLISTS:
             return {

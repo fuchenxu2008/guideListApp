@@ -26,13 +26,21 @@ class Index extends Component {
     this.props.getAllChecklists();
   }
 
+  onShareAppMessage() {
+    return {
+      title: 'Explore Guides',
+      desc: 'Explore new tips and guide.',
+      path: '/pages/index/index'
+    }
+  }
+
   render () {
     return (
       <View className='index' style={{ position: `${this.props.searching ? 'fixed' : 'static'}` }}>
         <SearchBar />
-        <SearchResult show={this.props.searching} />
+        { this.props.searching && <SearchResult /> }
         <View className='main-heading'>Featured</View>
-        <Carousel />
+        <Carousel contents={this.props.checklists} />
         <View className='main-heading'>Explore More</View>
         <CheckList lists={this.props.checklists} />
       </View>

@@ -12,7 +12,7 @@ import './SearchBar.css'
 class SearchBar extends Component {
   onSearch(e) {
     const phrase = e.detail.value || e.target.value;
-    if (phrase === '') this.props.clearSearchResult();
+    if (phrase.trim() === '') this.props.clearSearchResult();
     else this.props.searchChecklist(phrase);
   }
 
