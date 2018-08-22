@@ -47,21 +47,21 @@ class ListDetail extends Component {
     Taro.vibrateShort();
     this.props.updateProgress(id, e.detail.value);
     if (this.props.currentChecklist.steps.length === e.detail.value.length)
-      this.props.finishTask(id);
+      this.props.finishTask(this.props.currentChecklist);
   }
 
-  onAddTask(id) {
-    this.props.addTask(id);
+  onAddTask() {
+    this.props.addTask(this.props.currentChecklist);
     Taro.vibrateShort();
   }
 
-  onRemoveTask(id) {
-    this.props.removeTask(id);
+  onRemoveTask() {
+    this.props.removeTask(this.props.currentChecklist);
     Taro.vibrateShort();
   }
 
-  onRestartTask(id) {
-    this.props.restartTask(id);
+  onRestartTask() {
+    this.props.restartTask(this.props.currentChecklist);
     Taro.vibrateShort();
   }
 
@@ -88,11 +88,11 @@ class ListDetail extends Component {
           />
           {
             isProcessing
-            ? <Button className='listdetail-removebookmark' onClick={this.onRemoveTask.bind(this, list.id)}>Remove Task</Button>
+            ? <Button className='listdetail-removebookmark' onClick={this.onRemoveTask.bind(this)}>Remove Task</Button>
             : (
               isFinished
-                ? <Button className='listdetail-addbookmark' onClick={this.onRestartTask.bind(this, list.id)}>Restart Task</Button>
-                : <Button className='listdetail-addbookmark' onClick={this.onAddTask.bind(this, list.id)}>Start Task</Button>
+                ? <Button className='listdetail-addbookmark' onClick={this.onRestartTask.bind(this)}>Restart Task</Button>
+                : <Button className='listdetail-addbookmark' onClick={this.onAddTask.bind(this)}>Start Task</Button>
             )
           }
         </View>

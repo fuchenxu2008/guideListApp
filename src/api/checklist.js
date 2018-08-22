@@ -20,3 +20,11 @@ export const searchChecklists = (title) => {
     url: `${ROOT_URL}/api/search?title=${title}`,
   })
 }
+
+export const getProcessingChecklists = (idArr) => {
+  return Taro.request({
+    url: `${ROOT_URL}/api/checklists`,
+    method: 'POST',
+    data: idArr,
+  })
+};

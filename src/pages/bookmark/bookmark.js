@@ -2,16 +2,23 @@ import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import CheckList from '../../components/CheckList/CheckList';
+import { getProcessingChecklists } from '../../actions/usage';
 
 import './bookmark.css'
 
-@connect(({ usageReducer, checklistReducer }) => ({
+@connect(({ usageReducer }) => ({
   processing: usageReducer.processing,
-  checklists: checklistReducer.checklists,
+  processingChecklists: usageReducer.processingChecklists,
+}), (dispatch) => ({
+  getProcessingChecklists: (idArr) => dispatch(getProcessingChecklists(idArr))
 }))
 class Bookmark extends Component {
   config = {
     navigationBarTitleText: 'Processing'
+  }
+
+  componentDidMount() {
+    this.props.getProcessingChecklists(Object.keys(this.props.processing));
   }
 
   componentDidShow() {
@@ -34,8 +41,7 @@ class Bookmark extends Component {
   }
 
   render () {
-    const { processing, checklists } = this.props;
-    const processingChecklists = checklists.filter(list => Object.keys(processing).includes(list.id.toString()));
+    const { processingChecklists } = this.props;
     return (
       <View className='bookmark'>
         <View className='main-heading'>Your Tasks</View>

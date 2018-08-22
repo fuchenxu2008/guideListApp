@@ -16,5 +16,10 @@ module.exports = {
     getCheckList: (req, res) => {
         const { id } = req.params;
         res.send(...database.filter(list => list.id === id));
+    },
+
+    getSpecificCheckLists: (req, res) => {
+        const idArr = req.body;
+        res.send(database.filter(list => idArr.includes(list.id)));
     }
 }

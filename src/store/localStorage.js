@@ -1,7 +1,7 @@
 import Taro from '@tarojs/taro';
 
 const mayCleanCache = () => {
-    const flag = 'clean_1';
+    const flag = 'clean_2';
     if (!Taro.getStorageSync(flag)) {
         Taro.clearStorageSync();
         Taro.setStorageSync(flag, true)

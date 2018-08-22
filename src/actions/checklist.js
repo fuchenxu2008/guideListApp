@@ -15,8 +15,6 @@ export const getAllChecklists = (page) => (dispatch) => {
     })
 }
 
-    
-
 export const getChecklist = (id) => (dispatch) => {
     return api.getChecklist(id).then(res => {
         dispatch({
