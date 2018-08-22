@@ -20,7 +20,7 @@ module.exports = [{
   image: 'http://creativerealestateinvestmentnetwork.com/wp-content/uploads/2011/05/imones-registravimas.jpg',
   steps: [
     '1. You will need: <b> Your passport/Your apartment contract</b>',
-    '2. Go to the <b> Police Station</b> at <b> Wenhui Plaza</b>: <br/> From <b> 西交大</b> bus station (the one in front of XJTLU), take bus No. <b> 2</b>, <b> 812</b>, <b> 142</b>, <b> 178</b> or <b> 228</b> to <b> 独墅湖高教区首末站</b>.',
+    '2. Go to the <b> Police Station</b> at <b> Wenhui Plaza</b>: <br/>🚍 From <b> 西交大</b> bus station (the one in front of XJTLU), take bus No. <b> 2</b>, <b> 812</b>, <b> 142</b>, <b> 178</b> or <b> 228</b> to <b> 独墅湖高教区首末站</b>.',
     '3. The Police Station looks like this:',
     '4. Go to the <b> Service Center</b> and you should obtain a document which looks like this:',
   ],

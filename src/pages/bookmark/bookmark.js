@@ -38,12 +38,12 @@ class Bookmark extends Component {
     const bookmarkedChecklists = checklists.filter(list => Object.keys(bookmarked).includes(list.id.toString()));
     return (
       <View className='bookmark'>
-        <View className='main-heading'>Your Bookmarks</View>
+        <View className='main-heading'>Your Processing Task</View>
         {
           bookmarkedChecklists.length > 0
             ? <CheckList lists={bookmarkedChecklists} />
             : <View className='no-bookmark'>
-                ～ No Bookmark ～
+                ～ No Processing Tasks ～
               </View>
         }
       </View>

@@ -1,4 +1,5 @@
 .checklistitem {
+    position: relative;
     border-radius: 15px;
     margin: 35px 35px 35px 35px;
     background-color: white;
@@ -41,4 +42,32 @@
     font-size: 0.9rem;
     color: rgb(236, 179, 45);
     border-left: 6px solid #FACB61;
+}
+
+.checklistitem-processing {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  padding: 10px 20px 10px 20px;
+  content: '';
+  background-color: #FACB61;
+  color: white;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  font-weight: bold;
+  box-shadow: 2px 5px 25px rgba(255, 227, 161, 0.747);
+}
+
+.checklistitem-finished {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  padding: 10px 20px 10px 20px;
+  content: '';
+  color: white;
+  background-color: rgb(105, 105, 105);
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  font-weight: bold;
+  box-shadow: 2px 5px 25px rgba(90, 90, 90, 0.534);
 }
