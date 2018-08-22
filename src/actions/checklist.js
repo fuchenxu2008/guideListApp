@@ -1,4 +1,4 @@
-import { GET_ALL_CHECKLISTS, GET_CHECKLIST, CLEAR_CURRENT, SEARCH_LISTS, CLEAR_SEARCH_RESULT, START_SEARCH } from '../constants/checklist';
+import { GET_ALL_CHECKLISTS, GET_CHECKLIST, CLEAR_CURRENT, SEARCH_LISTS, CLEAR_SEARCH_RESULT, START_SEARCH, UPDATE_SEARCH_PHRASE } from '../constants/checklist';
 import * as api from '../api/checklist';
 
 export const getAllChecklists = () => (dispatch) => {
@@ -42,5 +42,12 @@ export const searchChecklist = (title) => (dispatch) => {
 export const clearSearchResult = () => {
   return {
     type: CLEAR_SEARCH_RESULT,
+  };
+};
+
+export const updateSearchPhrase = (phrase) => {
+  return {
+    type: UPDATE_SEARCH_PHRASE,
+    payload: phrase,
   };
 };

@@ -32,7 +32,7 @@ class App extends Component {
         selectedIconPath: 'assets/icons/icon-check-list-selected.png',
       },{
         pagePath: "pages/bookmark/bookmark",
-        text: "Bookmark",
+        text: "Processing",
         iconPath: 'assets/icons/bookmark.png',
         selectedIconPath: 'assets/icons/bookmark-selected.png',
       }]

@@ -14,6 +14,17 @@ class Bookmark extends Component {
     navigationBarTitleText: 'Bookmark'
   }
 
+  componentDidShow() {
+    if (Object.keys(this.props.bookmarked).length > 0) {
+      Taro.setTabBarBadge({
+        index: 1,
+        text: Object.keys(this.props.bookmarked).length.toString()
+      })
+    } else {
+      Taro.removeTabBarBadge({ index: 1 })
+    }
+  }
+
   onShareAppMessage() {
     return {
       title: 'Your Bookmarks',

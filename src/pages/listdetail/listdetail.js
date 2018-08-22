@@ -19,7 +19,7 @@ import './listdetail.css'
 }))
 class ListDetail extends Component {
   config = {
-    navigationBarTitleText: 'Detail'
+    navigationBarTitleText: 'Detail',
   }
 
   componentDidMount () {

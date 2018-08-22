@@ -1,19 +1,25 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Input, Icon } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
-import { searchChecklist, clearSearchResult } from '../../actions/checklist';
+import { searchChecklist, clearSearchResult, updateSearchPhrase } from '../../actions/checklist';
 
 import './SearchBar.css'
 
-@connect(({}) => ({}), (dispatch) => ({
+@connect(({ checklistReducer }) => ({
+  searchPhrase: checklistReducer.searchPhrase,
+}), (dispatch) => ({
   searchChecklist: (title) => dispatch(searchChecklist(title)),
-  clearSearchResult: () => dispatch(clearSearchResult())
+  clearSearchResult: () => dispatch(clearSearchResult()),
+  updateSearchPhrase: (phrase) => dispatch(updateSearchPhrase(phrase)),
 }))
 class SearchBar extends Component {
   onSearch(e) {
     const phrase = e.detail.value || e.target.value;
     if (phrase.trim() === '') this.props.clearSearchResult();
-    else this.props.searchChecklist(phrase);
+    else {
+      this.props.updateSearchPhrase(phrase);
+      this.props.searchChecklist(phrase);
+    }
   }
 
   render () {
@@ -25,6 +31,7 @@ class SearchBar extends Component {
               placeholder='Search for a topic here...'
               onInput={this.onSearch.bind(this)}
               onConfirm={this.onSearch.bind(this)}
+              value={this.props.searchPhrase}
             />
             <Icon size='15' type='search' className='searchbar-icon' /> 
         </View>

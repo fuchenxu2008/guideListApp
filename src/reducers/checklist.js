@@ -1,8 +1,9 @@
-import { GET_ALL_CHECKLISTS, GET_CHECKLIST, CLEAR_CURRENT, SEARCH_LISTS, CLEAR_SEARCH_RESULT, START_SEARCH } from '../constants/checklist';
+import { GET_ALL_CHECKLISTS, GET_CHECKLIST, CLEAR_CURRENT, SEARCH_LISTS, CLEAR_SEARCH_RESULT, START_SEARCH, UPDATE_SEARCH_PHRASE } from '../constants/checklist';
 
 const initialState = {
     checklists: [],
     currentChecklist: null,
+    searchPhrase: '',
     searchResult: null,
     searching: false,
 }
@@ -39,6 +40,12 @@ export default function checklistReducer(state = initialState, action) {
                 ...state,
                 searchResult: null,
                 searching: false,
+                searchPhrase: '',
+            }
+        case UPDATE_SEARCH_PHRASE:
+            return {
+                ...state,
+                searchPhrase: action.payload,
             }
         default:
             return state;

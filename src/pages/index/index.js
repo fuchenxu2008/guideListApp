@@ -9,8 +9,9 @@ import { getAllChecklists } from '../../actions/checklist';
 
 import './index.css'
 
-@connect(({ checklistReducer }) => ({
+@connect(({ checklistReducer, usageReducer }) => ({
   checklists: checklistReducer.checklists,
+  bookmarked: usageReducer.bookmarked,
   searching: checklistReducer.searching,
 }),
   (dispatch) => ({
@@ -23,7 +24,18 @@ class Index extends Component {
   }
 
   componentWillMount() {
-    this.props.getAllChecklists();
+    this.props.getAllChecklists();    
+  }
+
+  componentDidShow() {
+    if (Object.keys(this.props.bookmarked).length > 0) {
+      Taro.setTabBarBadge({
+        index: 1,
+        text: Object.keys(this.props.bookmarked).length.toString()
+      })
+    } else {
+      Taro.removeTabBarBadge({ index: 1 })
+    }
   }
 
   onShareAppMessage() {
@@ -32,6 +44,11 @@ class Index extends Component {
       desc: 'Explore new tips and guide.',
       path: '/pages/index/index'
     }
+  }
+
+  onReachBottom() {
+    console.log('bottom');
+    Taro.vibrateShort();
   }
 
   render () {

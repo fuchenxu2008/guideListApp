@@ -12,8 +12,6 @@ import './SearchResult.css'
   clearSearchResult: () => dispatch(clearSearchResult())
 }))
 class SearchBar extends Component {
-  // state = { aniClass: 'hidden' };
-
   componentWillReceiveProps(nextProps) {
     if (!nextProps.show && this.state.aniClass === 'searchresult-show')
       this.setState({ aniClass: 'searchresult-hidden' })
@@ -24,11 +22,17 @@ class SearchBar extends Component {
       this.props.clearSearchResult();
   }
 
+  onReachBottom = () => {
+    console.log('bottom search');
+    Taro.vibrateShort();
+  }
+
   render () {
     return (
       <ScrollView
         className='searchresult'
         scrollY
+        onScrollToLower={this.onReachBottom}
       >
         <View className='searchresult-heading'>
             <View className='main-heading'>Search Result</View>
