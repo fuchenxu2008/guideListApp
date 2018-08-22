@@ -6,19 +6,19 @@ import CheckList from '../../components/CheckList/CheckList';
 import './bookmark.css'
 
 @connect(({ usageReducer, checklistReducer }) => ({
-  bookmarked: usageReducer.bookmarked,
+  processing: usageReducer.processing,
   checklists: checklistReducer.checklists,
 }))
 class Bookmark extends Component {
   config = {
-    navigationBarTitleText: 'Bookmark'
+    navigationBarTitleText: 'Processing'
   }
 
   componentDidShow() {
-    if (Object.keys(this.props.bookmarked).length > 0) {
+    if (Object.keys(this.props.processing).length > 0) {
       Taro.setTabBarBadge({
         index: 1,
-        text: Object.keys(this.props.bookmarked).length.toString()
+        text: Object.keys(this.props.processing).length.toString()
       })
     } else {
       Taro.removeTabBarBadge({ index: 1 })
@@ -27,23 +27,23 @@ class Bookmark extends Component {
 
   onShareAppMessage() {
     return {
-      title: 'Your Bookmarks',
+      title: 'Your Processing Tasks',
       desc: 'Keep track of your progress.',
       path: '/pages/bookmark/bookmark'
     }
   }
 
   render () {
-    const { bookmarked, checklists } = this.props;
-    const bookmarkedChecklists = checklists.filter(list => Object.keys(bookmarked).includes(list.id.toString()));
+    const { processing, checklists } = this.props;
+    const processingChecklists = checklists.filter(list => Object.keys(processing).includes(list.id.toString()));
     return (
       <View className='bookmark'>
-        <View className='main-heading'>Your Processing Task</View>
+        <View className='main-heading'>Your Tasks</View>
         {
-          bookmarkedChecklists.length > 0
-            ? <CheckList lists={bookmarkedChecklists} />
+          processingChecklists.length > 0
+            ? <CheckList lists={processingChecklists} />
             : <View className='no-bookmark'>
-                ～ No Processing Tasks ～
+                ～ No Tasks ～
               </View>
         }
       </View>

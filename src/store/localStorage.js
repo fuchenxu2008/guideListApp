@@ -1,7 +1,16 @@
 import Taro from '@tarojs/taro';
 
+const mayCleanCache = () => {
+    const flag = 'clean_1';
+    if (!Taro.getStorageSync(flag)) {
+        Taro.clearStorageSync();
+        Taro.setStorageSync(flag, true)
+    }
+}
+
 export const loadState = () => {
     try {
+        mayCleanCache();
         const serializedState = Taro.getStorageSync('state');
         return serializedState ? JSON.parse(serializedState) : undefined;
     } catch (err) {

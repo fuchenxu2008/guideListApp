@@ -4,7 +4,10 @@ import { connect } from '@tarojs/redux'
 
 import './CheckListItem.css'
 
-@connect(({ usageReducer }) => ({ bookmarked: usageReducer.bookmarked }))
+@connect(({ usageReducer }) => ({
+  processing: usageReducer.processing,
+  finished: usageReducer.finished,
+}))
 class CheckListItem extends Component {
   enterCheckListItem(id) {
       Taro.vibrateShort();
@@ -13,12 +16,13 @@ class CheckListItem extends Component {
       })
   }
 
-  render () {    
-    const { list, bookmarked } = this.props;
-    const status = list && (Object.keys(bookmarked).includes(list.id))
-      ? (
-        bookmarked[list.id].length === list.steps.length ? 'Finished' : 'Processing'
-      ) : 'unplayed';
+  render () {  
+    const { list, processing, finished } = this.props;
+    const status = list && (finished.includes(list.id))
+      ? 'Finished'
+      : (
+        list && processing.hasOwnProperty(list.id) ? 'Processing' : 'unplayed'
+      );
     return (
       <View
         className='checklistitem'

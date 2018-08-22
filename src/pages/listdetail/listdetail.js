@@ -3,19 +3,22 @@ import { View, Image, Button } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import ListSteps from '../../components/ListSteps/ListSteps';
 import { getChecklist, clearCurrent } from '../../actions/checklist';
-import { addBookmark, removeBookmark, updateProgress } from '../../actions/usage';
+import { addTask, removeTask, updateProgress, finishTask, restartTask } from '../../actions/usage';
 
 import './listdetail.css'
 
 @connect(({ checklistReducer, usageReducer }) => ({
   currentChecklist: checklistReducer.currentChecklist,
-  bookmarked: usageReducer.bookmarked,
+  processing: usageReducer.processing,
+  finished: usageReducer.finished,
 }), (dispatch) => ({
   getChecklist: (id) => dispatch(getChecklist(id)),
   clearCurrent: () => dispatch(clearCurrent()),
-  addBookmark: (id) => dispatch(addBookmark(id)),
-  removeBookmark: (id) => dispatch(removeBookmark(id)),
+  addTask: (id) => dispatch(addTask(id)),
+  removeTask: (id) => dispatch(removeTask(id)),
   updateProgress: (id, steps) => dispatch(updateProgress(id, steps)),
+  finishTask: (id) => dispatch(finishTask(id)),
+  restartTask: (id) => dispatch(restartTask(id)),
 }))
 class ListDetail extends Component {
   config = {
@@ -43,23 +46,34 @@ class ListDetail extends Component {
   handleCheckStep = (id, e) => {
     Taro.vibrateShort();
     this.props.updateProgress(id, e.detail.value);
+    if (this.props.currentChecklist.steps.length === e.detail.value.length)
+      this.props.finishTask(id);
   }
 
-  onAddBookmark(id) {
-    this.props.addBookmark(id);
+  onAddTask(id) {
+    this.props.addTask(id);
     Taro.vibrateShort();
   }
 
-  onRemoveBookmark(id) {
-    this.props.removeBookmark(id);
+  onRemoveTask(id) {
+    this.props.removeTask(id);
+    Taro.vibrateShort();
+  }
+
+  onRestartTask(id) {
+    this.props.restartTask(id);
     Taro.vibrateShort();
   }
 
   render () {
     const list = this.props.currentChecklist;
-    const bookmarked = list && this.props.bookmarked.hasOwnProperty(list.id);
+    const { processing, finished } = this.props;
+    const isProcessing = list && processing.hasOwnProperty(list.id);
+    const isFinished = list && finished.includes(list.id);
+
     return list ? (
       <View className='listdetail'>
+        { isFinished && <View className='listdetail-finished'>Finished</View> }
         <View className='listdetail-brand'>
           <Image src={list.image} alt='' className='listdetail-brand-image' mode='aspectFill' />
         </View>
@@ -68,14 +82,18 @@ class ListDetail extends Component {
           { list.note && <View className='listdetail-note'>{list.note}</View> }
           <ListSteps
             steps={list.steps || []}
-            bookmarked={bookmarked}
+            processing={isProcessing}
             onCheckStep={this.handleCheckStep.bind(this, list.id)}
-            checkedSteps={this.props.bookmarked[list.id.toString()] || []}
+            checkedSteps={processing[list.id.toString()] || []}
           />
           {
-            bookmarked
-            ? <Button className='listdetail-removebookmark' onClick={this.onRemoveBookmark.bind(this, list.id)}>Remove Bookmark</Button>
-            : <Button className='listdetail-addbookmark' onClick={this.onAddBookmark.bind(this, list.id)}>Add Bookmark</Button>
+            isProcessing
+            ? <Button className='listdetail-removebookmark' onClick={this.onRemoveTask.bind(this, list.id)}>Remove Task</Button>
+            : (
+              isFinished
+                ? <Button className='listdetail-addbookmark' onClick={this.onRestartTask.bind(this, list.id)}>Restart Task</Button>
+                : <Button className='listdetail-addbookmark' onClick={this.onAddTask.bind(this, list.id)}>Start Task</Button>
+            )
           }
         </View>
       </View>

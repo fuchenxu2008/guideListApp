@@ -5,7 +5,8 @@ import './ListSteps.css'
 
 class ListSteps extends Component {
   render () {
-    const { steps, bookmarked, checkedSteps, onCheckStep } = this.props;
+    const { steps, processing, checkedSteps, onCheckStep } = this.props;
+
     return (
       <View>
         <View className='main-heading'>Steps</View>
@@ -14,7 +15,7 @@ class ListSteps extends Component {
             return (
               <View key={i} className='listdetail-step'>
                 {
-                  bookmarked ? ( 
+                  processing ? (
                       <Checkbox
                         className='listdetail-checkbox'
                         value={i + 1}

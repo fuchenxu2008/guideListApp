@@ -1,5 +1,27 @@
 .listdetail {
     padding-bottom: 40px;
+    position: relative;
+}
+
+.listdetail-finished {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 2rem;
+    padding: 15px 30px 15px 30px;
+    color: rgba(163, 5, 5, 0.568);
+    border: 10px solid rgba(163, 5, 5, 0.568);
+    animation: 0.5s dropDown ease;
+}
+
+@keyframes dropDown {
+    0% {
+        transform: translate(-50%, -50%) rotate(-30deg) scale(2);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-30deg) scale(1);
+    }
 }
 
 .listdetail-brand {

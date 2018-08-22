@@ -1,4 +1,4 @@
-import { GET_ALL_CHECKLISTS, GET_CHECKLIST, CLEAR_CURRENT, SEARCH_LISTS, CLEAR_SEARCH_RESULT, START_SEARCH, UPDATE_SEARCH_PHRASE } from '../constants/checklist';
+import { GET_ALL_CHECKLISTS, GET_CHECKLIST, CLEAR_CURRENT, SEARCH_LISTS, CLEAR_SEARCH_RESULT, START_SEARCH, UPDATE_SEARCH_PHRASE, GET_PARTIAL_CHECKLISTS } from '../constants/checklist';
 
 const initialState = {
     checklists: [],
@@ -14,6 +14,11 @@ export default function checklistReducer(state = initialState, action) {
             return {
                 ...state,
                 checklists: action.payload,
+            }
+        case GET_PARTIAL_CHECKLISTS:
+            return {
+                ...state,
+                checklists: state.checklists.concat(action.payload),
             }
         case GET_CHECKLIST:
             return {

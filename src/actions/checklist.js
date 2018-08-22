@@ -1,12 +1,17 @@
-import { GET_ALL_CHECKLISTS, GET_CHECKLIST, CLEAR_CURRENT, SEARCH_LISTS, CLEAR_SEARCH_RESULT, START_SEARCH, UPDATE_SEARCH_PHRASE } from '../constants/checklist';
+import { GET_ALL_CHECKLISTS, GET_CHECKLIST, CLEAR_CURRENT, SEARCH_LISTS, CLEAR_SEARCH_RESULT, START_SEARCH, UPDATE_SEARCH_PHRASE, GET_PARTIAL_CHECKLISTS } from '../constants/checklist';
 import * as api from '../api/checklist';
 
-export const getAllChecklists = () => (dispatch) => {
-    return api.getAllChecklists().then(res => {
-        dispatch({
-            type: GET_ALL_CHECKLISTS,
-            payload: res.data,
-        })
+export const getAllChecklists = (page) => (dispatch) => {
+    return api.getAllChecklists(page).then(res => {
+        const type = page ? (
+            page === 1 ? GET_ALL_CHECKLISTS : GET_PARTIAL_CHECKLISTS
+        ) : GET_ALL_CHECKLISTS;
+        if (type === GET_ALL_CHECKLISTS || (type === GET_PARTIAL_CHECKLISTS && res.data.length > 0)) {
+            dispatch({
+                type,
+                payload: res.data,
+            })
+        }
     })
 }
 

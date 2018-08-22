@@ -11,11 +11,11 @@ import './index.css'
 
 @connect(({ checklistReducer, usageReducer }) => ({
   checklists: checklistReducer.checklists,
-  bookmarked: usageReducer.bookmarked,
+  processing: usageReducer.processing,
   searching: checklistReducer.searching,
 }),
   (dispatch) => ({
-    getAllChecklists: () => dispatch(getAllChecklists()),
+    getAllChecklists: (page) => dispatch(getAllChecklists(page)),
   }
 ))
 class Index extends Component {
@@ -23,15 +23,21 @@ class Index extends Component {
     navigationBarTitleText: 'Explore'
   }
 
-  componentWillMount() {
-    this.props.getAllChecklists();    
+  state = { currentPage: 1 }
+
+  componentDidMount() {
+    this.props.getAllChecklists(1);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ currentPage: Math.ceil(nextProps.checklists.length / 5) })
   }
 
   componentDidShow() {
-    if (Object.keys(this.props.bookmarked).length > 0) {
+    if (Object.keys(this.props.processing).length > 0) {
       Taro.setTabBarBadge({
         index: 1,
-        text: Object.keys(this.props.bookmarked).length.toString()
+        text: Object.keys(this.props.processing).length.toString()
       })
     } else {
       Taro.removeTabBarBadge({ index: 1 })
@@ -47,7 +53,7 @@ class Index extends Component {
   }
 
   onReachBottom() {
-    console.log('bottom');
+    this.props.getAllChecklists(this.state.currentPage + 1);
     Taro.vibrateShort();
   }
 

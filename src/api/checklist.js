@@ -3,9 +3,9 @@ import Taro from '@tarojs/taro';
 const ROOT_URL = 'https://guide.kyrie.top';
 // const ROOT_URL = 'http://192.168.1.101:9099';
 
-export const getAllChecklists = () => {
+export const getAllChecklists = (page) => {
     return Taro.request({
-        url: `${ROOT_URL}/api/checklists`,
+        url: `${ROOT_URL}/api/checklists?page=${page || ''}&count=5`,
     })
 }
 

@@ -1,4 +1,5 @@
 export const GET_ALL_CHECKLISTS = 'app/GET_ALL_CHECKLISTS';
+export const GET_PARTIAL_CHECKLISTS = 'app/GET_PARTIAL_CHECKLISTS';
 export const GET_CHECKLIST = 'app/GET_CHECKLIST';
 export const CLEAR_CURRENT = 'listdetail/CLEAR_CURRENT';
 export const SEARCH_LISTS = 'searchBar/SEARCH_LISTS';
