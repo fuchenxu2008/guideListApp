@@ -3,7 +3,14 @@ const database = require('../database');
 
 module.exports = {
     getAllCheckLists: (req, res) => {
-        res.send(database);
+        const { page, count } = req.query;
+        if (page && count) {
+            const start = (page - 1) * count;
+            const end = start + count;
+            res.send(database.slice(start, end));
+        } else {
+            res.send(database);
+        }
     },
 
     getCheckList: (req, res) => {
